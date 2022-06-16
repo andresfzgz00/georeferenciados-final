@@ -10,17 +10,19 @@ interface CardProps {
     buttonColor?: string,
     buttonText?: string,
     quantity: number,
-    onClickButton: () => void
+    onClickButton: () => void,
+    id?: string
 }
 
-const CardComponent: FC<CardProps> = ({ title, price, imageUrl, buttonColor = 'primary', buttonText = 'Comprar', quantity, onClickButton}) => {
+const CardComponent: FC<CardProps> = ({ title, price, imageUrl, buttonColor = 'primary', buttonText = 'Comprar', quantity, onClickButton, id}) => {
     return (
-        <Col className='mb-3'>
+        <Col className='mb-3' key={id}>
             <Card style={{ width: '18rem' }}>
                 <Card.Img variant="top" src={imageUrl}  />
                 <Card.Body>
                     <Card.Title>{title}</Card.Title>
                     <Card.Text>${price.toFixed(2)}</Card.Text>
+                    <Card.Text>Cantidad: {quantity}</Card.Text>
                     <Button variant={buttonColor} active={!!quantity} onClick={onClickButton}>{buttonText}</Button>
                 </Card.Body>
             </Card>

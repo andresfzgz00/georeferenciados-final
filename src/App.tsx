@@ -2,21 +2,26 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { Provider } from "react-redux";
 
 import Navbar from "./components/navbar";
-import Cart from "./pages/cart";
-import Store from "./pages/store";
-import Home from "./pages/home";
+import CartPage from "./pages/cartPage";
+import StorePage from "./pages/storePage";
+import OrdersPage from "./pages/ordersPage";
 import store from "./redux/store";
+import { Container } from "react-bootstrap";
 
 const App = () => {
   return (
     <Provider store={store}>
       <BrowserRouter>
+
+
         <Navbar />
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/store" element={<Store />} />
-          <Route path="/cart" element={<Cart />} />
-        </Routes>
+        <Container className="mt-4">
+          <Routes>
+            <Route path="/orders" element={<OrdersPage />} />
+            <Route path="/" element={<StorePage />} />
+            <Route path="/cart" element={<CartPage />} />
+          </Routes>
+        </Container>
       </BrowserRouter>
     </Provider>
   );

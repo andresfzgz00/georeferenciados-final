@@ -7,16 +7,16 @@ import Product from '../models/Product'
 
 interface CardDeckProps {
     items: Product[],
-    onClickButton: (item: Product | string) => void
+    onClickButton: (item: Product) => void,
+    buttonText?: string,
+    buttonColor?: string
 }
 
-const CardDeck: FC<CardDeckProps> = ({items, onClickButton}) => {
+const CardDeck: FC<CardDeckProps> = ({ items, onClickButton, buttonText, buttonColor }) => {
     return (
-        <Container className="mt-4">
-            <Row md="4" xs="2" sm="3">
-                {items.map(item => <Card imageUrl={item.image} price={item.price} title={item.name} key={item.id} quantity={item.quantity} onClickButton={() => { onClickButton(item) }} />)}
-            </Row>
-        </Container>
+        <Row md="4" xs="2" sm="3">
+            {items.map(item => <Card imageUrl={item.image} price={item.price} title={item.name} key={item.id} quantity={item.quantity} onClickButton={() => { onClickButton(item) }} buttonText={buttonText} buttonColor={buttonColor} id={item.id} />)}
+        </Row>
     )
 };
 

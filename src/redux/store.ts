@@ -3,11 +3,13 @@ import { TypedUseSelectorHook, useSelector, useDispatch } from "react-redux";
 
 import stockReducer from './stock';
 import cartReducer from './cart';
+import ordersReducer from "./orders";
 
 const store = configureStore({
     reducer: {
         products: stockReducer,
-        cart: cartReducer
+        cart: cartReducer,
+        orders: ordersReducer
     }
 });
 
