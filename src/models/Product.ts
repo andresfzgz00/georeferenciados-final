@@ -1,9 +1,11 @@
-interface Product {
-    id: string,
-    name: string,
-    image: string,
-    price: number,
-    quantity: number
+class Product {
+    constructor(
+        public name: string,
+        public image: string,
+        public price: number,
+        public quantity: number,
+        public id?: string,
+    ) { }
 }
 
 export default Product
