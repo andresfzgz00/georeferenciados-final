@@ -1,11 +1,11 @@
-import { useDispatch } from "react-redux";
-import { Button, Container } from 'react-bootstrap';
+import { Button, } from 'react-bootstrap';
 
 import { useAppSelector as useSelector } from "../redux/store";
 import CardDeck from "../components/cardDeck";
 import { removeFromCart, clearCart } from "../redux/cart";
 import Product from "../models/Product";
 import { addOrder } from "../redux/orders";
+import { useAppDispatch as useDispatch } from '../redux/store';
 
 import './cartPage.css'
 

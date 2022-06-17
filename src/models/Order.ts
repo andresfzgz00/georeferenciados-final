@@ -5,6 +5,6 @@ export default class {
         public products: Product[],
         public amount: number,
         public date: Date,
-        public id?: number,
+        public id?: string,
     ) {};
 }

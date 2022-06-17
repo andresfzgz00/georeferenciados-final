@@ -1,7 +1,7 @@
 import { Card, Button, Col } from 'react-bootstrap';
 import { FC } from 'react';
 
-import Product from '../models/Product'
+import './card.css';
 
 interface CardProps {
     title: string,
@@ -16,10 +16,10 @@ interface CardProps {
 
 const CardComponent: FC<CardProps> = ({ title, price, imageUrl, buttonColor = 'primary', buttonText = 'Comprar', quantity, onClickButton, id}) => {
     return (
-        <Col className='mb-3' key={id}>
-            <Card style={{ width: '18rem' }}>
-                <Card.Img variant="top" src={imageUrl}  />
-                <Card.Body>
+        <Col className='mb-3 ' key={id}>
+            <Card className='h-100'>
+                <Card.Img variant="top" src={imageUrl} className="h-50"  />
+                <Card.Body className='card-text'>
                     <Card.Title>{title}</Card.Title>
                     <Card.Text>${price.toFixed(2)}</Card.Text>
                     <Card.Text>Cantidad: {quantity}</Card.Text>
