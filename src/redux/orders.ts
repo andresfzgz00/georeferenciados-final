@@ -9,6 +9,7 @@ const ordersSlice = createSlice({
     reducers: {
         getOrders: () => {},
         addOrder: (state: Order[], action: PayloadAction<{amount: number, products: Product[]}>) => {
+
             const {products, amount} = action.payload
             state.unshift(
                 new Order(

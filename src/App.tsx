@@ -12,8 +12,6 @@ const App = () => {
   return (
     <Provider store={store}>
       <BrowserRouter>
-
-
         <Navbar />
         <Container className="mt-4">
           <Routes>
