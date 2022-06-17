@@ -2,7 +2,7 @@ import { createSlice, PayloadAction, createAsyncThunk } from "@reduxjs/toolkit";
 
 import Order from "../models/Order";
 import Product from "../models/Product";
-import axios from "../util/axios";
+import axios from "../utils/axios";
 
 interface OrderDto {
     amount: number,
